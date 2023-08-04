@@ -1,0 +1,138 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 97vh;
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+.container{
+    padding: 2.5rem;
+    background: #eee;
+    position: relative;
+}
+
+.title{
+    text-align: center;
+}
+
+/*section categories*/
+.sectionCategories{
+    margin-bottom: 1.5rem;
+}
+
+.sectionCategories ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sectionCategories li{
+    display: inline-block;
+    background: #ccc;
+    padding: .4rem 1rem;
+}
+
+.sectionCategories a{
+    text-decoration: none;
+}
+
+/*section tasks*/
+.sectionTasks{
+    height: 20rem;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    background: #ccc;
+    width: 30rem;
+}
+
+.taskInfo{
+    padding: .7rem 1rem;
+    width: 100%;
+}
+
+.taskTitle{
+    margin-bottom: .2rem;
+}
+
+.taskCategory{
+    font-size: .9rem;
+}
+
+.taskBtn{
+    display: flex;
+    align-items: center;
+    margin: auto 1rem;
+}
+
+.completedBtn{
+    height: 1.9rem;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background: #fff;
+}
+
+/*section extra*/
+.extraInfo{
+    display: inline-block;
+    padding: .4rem 1rem;
+    background: #ccc;
+}
+
+.newBtn{
+    position: absolute;
+    right: -1rem;
+    bottom: -1rem;
+
+    border-radius: 100%;
+    border: none;
+    line-height: 1.8rem;
+    padding: 2rem;
+    font-size: 3rem;
+    text-decoration: none;
+    background: #ccc;
+}
+
+/*footer*/
+.copyright{
+    position: absolute;
+    bottom: .8rem;
+    font-size: .8rem;
+}
+
+/*modal*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+
+    width: 50%;
+    padding: 1.8rem;
+    background: #ccc;
+}
+
+.modalOption{
+    text-decoration: none;
+    display: inline-block;
+    padding: .4rem 1rem;
+    background: #aaa;
+}
