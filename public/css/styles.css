@@ -132,21 +132,49 @@ h1{
 .modal{
     position: fixed;
     z-index: 2;
-    left: 0; 
-    right: 0; 
     margin-left: auto; 
     margin-right: auto;
 
-    width: 50%;
     padding: 1.8rem;
     background: #ccc;
 }
+
 
 .modalOption{
     text-decoration: none;
     display: inline-block;
     padding: .4rem 1rem;
     background: #aaa;
+}
+
+.modalTitle{
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.modalClose{
+    display: inline-block;
+    float: right;
+}
+
+.modalSection{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+}
+
+input[name="task"]{
+    min-width: 35vw;
+    padding: .7rem .5rem;
+    font-size: 1.1rem;
+}
+
+.addBtn{
+    height: 2.8rem;
+    font-size: 1.1rem;
 }
 
 /*functions*/

@@ -1,4 +1,5 @@
 const modal = document.querySelector("#newTaskModal");
+const closeModalBtn = document.querySelector("#closeModalBtn");
 const overlay = document.querySelector("#modalOverlay");
 const newTaskBtn = document.querySelector("#newTaskBtn");
 
@@ -13,4 +14,5 @@ const openModal = function(){
 }
 
 newTaskBtn.addEventListener("click", openModal);
+closeModalBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
