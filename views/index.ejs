@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <%- include("partials/head.ejs") %>
+    </head>
+    <body>
+        <main class="container">
+            <h1 class="title">TO-DO</h1>
+            <nav class="sectionCategories">
+                <ul>
+                    <a href="/tasks"><li class="option">All</li></a>
+                    <% for (let i = 0; i < categories.length; i++){ %>
+                    <a href="/tasks?c=<%=categories[i]%>"
+                        ><li class="option"><%=categories[i]%></li></a
+                    >
+                    <% } %>
+                </ul>
+            </nav>
+            <div class="sectionTasks">
+                <div class="task">
+                    <div class="taskInfo">
+                        <div class="taskTitle">Assignment</div>
+                        <div class="taskCategory">Category</div>
+                    </div>
+                    <div class="taskBtn">
+                        <a href="#" class="completedBtn"></a>
+                    </div>
+                </div>
+                <% for(let i = 0; i < tasks.length; i++){ %>
+                <div class="task">
+                    <div class="taskInfo">
+                        <div class="taskTitle"><%=tasks[i].title%></div>
+                        <div class="taskCategory"><%=tasks[i].category%></div>
+                    </div>
+                    <div class="taskBtn">
+                        <a href="#" class="completedBtn"></a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <div class="SectionExtra">
+                <div class="extraInfo">1 task left</div>
+                <a href="#" class="newBtn" id="newTaskBtn"
+                    ><i class="bi bi-plus"></i
+                ></a>
+            </div>
+        </main>
+        <footer class="copyright">
+            © Copyright <%= new Date().getFullYear() %>
+        </footer>
+
+        <!--modal-->
+        <div class="overlay hidden" id="modalOverlay"></div>
+        <div class="modal hidden" id="newTaskModal">
+            <div class="modalHeader">
+                <div class="modalTitle">New Task</div>
+                <button class="modalClose" id="closeModalBtn">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modalBody">
+                <form action="/newTask" method="post" id="taskForm">
+                    <div class="modalInput">
+                        <input
+                            type="text"
+                            placeholder="Enter new task"
+                            name="task"
+                        />
+                        <button type="submit" class="addBtn">Add</button>
+                    </div>
+                    <div class="modalOptions">
+                        <label>Category</label>
+                        <select name="category">
+                            <% for (let c of categories) { %>
+                                <option value="<%= c %>" <%= c==="Today"? "selected":"" %> ><%= c %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include("partials/scripts.ejs") %>
+    </body>
+</html>

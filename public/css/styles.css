@@ -53,8 +53,9 @@ a{
 /*section tasks*/
 .sectionTasks{
     height: 20rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .task{
