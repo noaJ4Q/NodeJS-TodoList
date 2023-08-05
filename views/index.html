@@ -18,9 +18,9 @@
         <h1 class="title">TO-DO</h1>
         <nav class="sectionCategories">
             <ul>
-                <li class="category"><a href="#">All</a></li>
-                <li class="category"><a href="#">Today</a></li>
-                <li class="category"><a href="#">Work</a></li>
+                <li class="option"><a href="#">All</a></li>
+                <li class="option"><a href="#">Today</a></li>
+                <li class="option"><a href="#">Work</a></li>
             </ul>
         </nav>
         <div class="sectionTasks">
@@ -46,19 +46,30 @@
     <!--modal-->
     <div class="overlay hidden" id="modalOverlay"></div>
     <div class="modal hidden" id="newTaskModal">
-        <div class="modalTitle">New task</div>
-        <button class="modalClose" id="closeModalBtn"><i class="bi bi-x-lg"></i></button>
-        <div class="modalSection">
-            <input type="text" placeholder="Enter new task" name="task">
-            <div>
+        <div class="modalHeader">
+            <div class="modalTitle">New Task</div>
+            <button class="modalClose" id="closeModalBtn"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modalBody">
+            <div class="modalInput">
+                <input type="text" placeholder="Enter new task" name="task">
                 <button class="addBtn">Add</button>
             </div>
+            <div class="modalOptions">
+                <label>Category</label>
+                <select>
+                    <option>Today</option>
+                    <option>Work</option>
+                </select>
+            </div>
         </div>
-        <div class="modalSection">
-            <a href="#" class="modalOption">Add category</a>
-            <a href="#" class="modalOption">Add hour</a>
+        <!--add category-->
+        <div class="modalBody">
+
         </div>
     </div>
+
+    <!--add hour-->
 
     <script src="../public/js/scripts.js"></script>
 </body>

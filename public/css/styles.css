@@ -16,6 +16,10 @@ h1{
     margin-bottom: 2rem;
 }
 
+a{
+    text-decoration: none;
+}
+
 .container{
     padding: 2.5rem;
     background: #eee;
@@ -39,12 +43,11 @@ h1{
 
 .sectionCategories li{
     display: inline-block;
-    background: #ccc;
-    padding: .4rem 1rem;
 }
 
-.sectionCategories a{
-    text-decoration: none;
+.option{
+    background: #ccc;
+    padding: .4rem 1rem;
 }
 
 /*section tasks*/
@@ -102,8 +105,8 @@ h1{
     border-radius: 100%;
     border: none;
     line-height: 1.8rem;
-    padding: 2rem;
-    font-size: 3rem;
+    padding: 1rem;
+    font-size: 4rem;
     text-decoration: none;
     background: #ccc;
 }
@@ -130,51 +133,52 @@ h1{
 }
 
 .modal{
+    min-width: 25vw;
     position: fixed;
     z-index: 2;
-    margin-left: auto; 
-    margin-right: auto;
 
     padding: 1.8rem;
-    background: #ccc;
+    background: #eee;
 }
 
-
-.modalOption{
-    text-decoration: none;
-    display: inline-block;
-    padding: .4rem 1rem;
-    background: #aaa;
-}
-
-.modalTitle{
-    display: inline-block;
+.modalHeader{
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
-.modalClose{
-    display: inline-block;
-    float: right;
-}
-
-.modalSection{
+.modalInput{
     margin-bottom: 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .8rem;
+    justify-content: space-between;
 }
 
 input[name="task"]{
-    min-width: 35vw;
     padding: .7rem .5rem;
     font-size: 1.1rem;
+    width: 100%;
+    margin-right: .8rem;
+}
+
+.modalOptions{
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 1.1rem;
+    background: #ccc;
+}
+
+.modalOptions label{
+    margin-right: 1rem;
+}
+
+.modalOptions select{
+    width: 100%;
 }
 
 .addBtn{
-    height: 2.8rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding: 0 .8rem;
 }
 
 /*functions*/
