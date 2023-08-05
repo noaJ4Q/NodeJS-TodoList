@@ -62,6 +62,7 @@ a{
     justify-content: space-between;
     background: #ccc;
     width: 30rem;
+    margin-bottom: .8rem;
 }
 
 .taskInfo{
