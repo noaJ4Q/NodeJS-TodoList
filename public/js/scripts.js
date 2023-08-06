@@ -4,7 +4,8 @@ const overlay = document.querySelector("#modalOverlay");
 const newTaskBtn = document.querySelector("#newTaskBtn");
 const taskInput = document.querySelector("input[name='task']");
 const addTaskBtn = document.querySelector("#addTaskBtn");
-const completedBtns = document.querySelectorAll("completedBtn");
+const completedBtns = document.querySelectorAll(".completedBtn");
+const tasksLeft = document.querySelector("#tasksLeft");
 
 //open and close modal functions
 const closeModal = function(){
@@ -31,11 +32,20 @@ document.addEventListener("keydown", (e)=>{
 //validate form
 taskInput.addEventListener("keyup", (e)=>{
     if(e.target.value===""){
-        taskInput.classList.add("inputAlert");
         addTaskBtn.disabled = true;
     }
     else{
-        taskInput.classList.remove("inputAlert");
         addTaskBtn.disabled = false;
     }
 })
+
+//complete task
+for(let i = 0; i < completedBtns.length; i++){
+    completedBtns[i].addEventListener("click", (e)=>{
+        let parent = e.target.parentElement.parentElement;
+        if(!parent.classList.contains("completedTask")){
+            e.target.parentElement.parentElement.classList.add("completedTask");
+            console.log()
+        }
+    })
+}

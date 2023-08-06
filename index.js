@@ -7,33 +7,45 @@ const port = 8080;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-let tasks = [
-    {
-        title: "Task title",
-        category: "Today"
-    }
-];
-
-let categories = [
+let categoriesSaved = [
     "Today",
     "Work"
 ]
+
+let tasksSaved = [
+    {
+        title: "Task title",
+        category: "Today",
+        completed: false
+    }
+];
+
 
 app.get("/", (req, res)=>{
     res.redirect("/tasks");
 })
 
 app.get("/tasks", (req, res)=>{
+    let categoryRequested = req.query.c;
+    let taskSended;
+    if(categoryRequested){
+        taskSended = tasksSaved.filter((t)=>t.category===categoryRequested);
+    }
+    else{
+        taskSended = [...tasksSaved];
+    }
+
     res.render("index.ejs", {
-        tasks: tasks,
-        categories: categories
+        tasks: taskSended,
+        categories: categoriesSaved
     });
 })
 
 app.post("/newTask", (req, res)=>{
-    tasks.push({
+    tasksSaved.push({
         title: req.body.task,
-        category: req.body.category
+        category: req.body.category,
+        completed: false
     })
     res.redirect("/");
 })

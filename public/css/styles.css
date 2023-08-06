@@ -58,6 +58,13 @@ a{
     overflow-x: hidden;
 }
 
+.noTasks{
+    text-align: center;
+    position: relative;
+    top: 50%;
+    width: 30rem;
+}
+
 .task{
     display: flex;
     justify-content: space-between;
@@ -189,6 +196,10 @@ input[name="task"]{
     display: none;
 }
 
-.inputAlert{
-    border: 1px solid red;
+.completedTask{
+    opacity: 0.5;
+}
+
+.completedTask .completedBtn{
+    cursor: context-menu;
 }

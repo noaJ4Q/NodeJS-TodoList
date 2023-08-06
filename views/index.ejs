@@ -20,6 +20,7 @@
                 </ul>
             </nav>
             <div class="sectionTasks">
+                <!--
                 <div class="task">
                     <div class="taskInfo">
                         <div class="taskTitle">Assignment</div>
@@ -29,23 +30,29 @@
                         <div class="completedBtn"></div>
                     </div>
                 </div>
-                <% for(let i = 0; i < tasks.length; i++){ %>
-                <div class="task">
+                -->
+                <% if(tasks.length > 0){ for(let i = 0; i < tasks.length; i++){
+                %>
+                <div class="task<%= tasks.completed?' completedTask':null%>">
                     <div class="taskInfo">
                         <div class="taskTitle"><%=tasks[i].title%></div>
                         <div class="taskCategory"><%=tasks[i].category%></div>
                     </div>
                     <div class="taskBtn">
-                        <a href="#" class="completedBtn"></a>
+                        <div class="completedBtn"></div>
                     </div>
                 </div>
-                <% } %>
+                <% } } else {%>
+                <div class="noTasks">No tasks left :)</div>
+                <%}%>
             </div>
             <div class="SectionExtra">
-                <div class="extraInfo">1 task left</div>
-                <div href="#" class="newBtn" id="newTaskBtn"
-                    ><i class="bi bi-plus"></i
-                ></div>
+                <!--
+                <div id="tasksLeft" class="extraInfo"> <%= tasks.length %> task(s) left</div>
+                -->
+                <div class="newBtn" id="newTaskBtn">
+                    <i class="bi bi-plus"></i>
+                </div>
             </div>
         </main>
         <footer class="copyright">
@@ -69,13 +76,20 @@
                             placeholder="Enter new task"
                             name="task"
                         />
-                        <button id="addTaskBtn" type="submit" class="addBtn">Add</button>
+                        <button
+                            id="addTaskBtn"
+                            type="submit"
+                            class="addBtn"
+                            disabled
+                        >
+                            Add
+                        </button>
                     </div>
                     <div class="modalOptions">
                         <label>Category</label>
                         <select name="category">
-                            <% for (let c of categories) { %>
-                                <option value="<%= c %>" <%= c==="Today"? "selected":"" %> ><%= c %></option>
+                            <% for (let c of categories) { %> 
+                                <option value="<%= c %>" <%= c==="Today"? "selected":"" %> > <%= c %></option>
                             <% } %>
                         </select>
                     </div>
