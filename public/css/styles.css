@@ -89,6 +89,7 @@ a{
     height: 1.9rem;
     aspect-ratio: 1;
     border-radius: 100%;
+    cursor: pointer;
     background: #fff;
 }
 
@@ -109,7 +110,7 @@ a{
     line-height: 1.8rem;
     padding: 1rem;
     font-size: 4rem;
-    text-decoration: none;
+    cursor: pointer;
     background: #ccc;
 }
 
@@ -186,4 +187,8 @@ input[name="task"]{
 /*functions*/
 .hidden{
     display: none;
+}
+
+.inputAlert{
+    border: 1px solid red;
 }
