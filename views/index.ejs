@@ -11,12 +11,15 @@
             <h1 class="title">TO-DO</h1>
             <nav class="sectionCategories">
                 <ul>
-                    <a href="/tasks"><li class="option">All</li></a>
-                    <% for (let i = 0; i < categories.length; i++){ %>
-                    <a href="/tasks?c=<%=categories[i]%>"
-                        ><li class="option"><%=categories[i]%></li></a
-                    >
-                    <% } %>
+                    <div>
+                        <a href="/tasks"><li class="option">All</li></a>
+                        <% for (let i = 0; i < categories.length; i++){ %>
+                        <a href="/tasks?c=<%=categories[i]%>"
+                            ><li class="option"><%=categories[i]%></li></a
+                        >
+                        <% } %>
+                    </div>
+                    <div id="newCategoryBtn" class="optionBtn">New category</div>
                 </ul>
             </nav>
             <div class="sectionTasks">
@@ -43,8 +46,8 @@
                     </div>
                 </div>
                 <% } } else {%>
-                <div class="noTasks">No tasks left :)</div>
-                <%}%>
+                <div class="noTasks">No tasks left</div>
+                <% } %>
             </div>
             <div class="SectionExtra">
                 <!--
@@ -59,12 +62,12 @@
             © Copyright <%= new Date().getFullYear() %>
         </footer>
 
-        <!--modal-->
+        <!--new task modal-->
         <div class="overlay hidden" id="modalOverlay"></div>
         <div class="modal hidden" id="newTaskModal">
             <div class="modalHeader">
                 <div class="modalTitle">New Task</div>
-                <button class="modalClose" id="closeModalBtn">
+                <button class="modalClose" id="closeModalTaskBtn">
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
@@ -94,6 +97,17 @@
                         </select>
                     </div>
                 </form>
+            </div>
+        </div>
+        <!--new category modal-->
+        <div class="modal hidden" id="newCategoryModal">
+            <div class="modalHeader">
+                <div class="modalTitle">New Category</div>
+                <button class="modalClose" id="closeModalCategoryBtn">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modalBody">
             </div>
         </div>
         <%- include("partials/scripts.ejs") %>

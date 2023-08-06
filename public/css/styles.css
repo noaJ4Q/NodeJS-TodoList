@@ -39,6 +39,8 @@ a{
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .sectionCategories li{
@@ -48,6 +50,12 @@ a{
 .option{
     background: #ccc;
     padding: .4rem 1rem;
+}
+
+.optionBtn{
+    background: #ccc;
+    padding: .4rem 1rem;
+    cursor: pointer;
 }
 
 /*section tasks*/
