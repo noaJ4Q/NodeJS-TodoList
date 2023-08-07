@@ -9,7 +9,7 @@ body{
     align-items: center;
     min-height: 100vh;
 
-    background-image: linear-gradient(to bottom, #0e2e5e, #25306c, #3d3077, #572d7f, #722583);
+    background-image: linear-gradient(to bottom, #1b3b6a, #3b4c8b, #615cab, #8c6ac8, #bc76e2);
 }
 
 h1{
@@ -27,7 +27,7 @@ a{
     background: #eee;
     position: relative;
 
-    border-radius: 1.5rem;
+    border-radius: 1.2rem;
 }
 
 .title{
@@ -49,12 +49,22 @@ a{
     display: flex;
     justify-content: start;
     gap: .3rem;
+    width: 100%;
 }
 
 .sectionCategories a{
     display: inline-block;
-    background: #ccc;
     padding: .4rem 1rem;
+
+    font-size: .9rem;
+    font-weight: 600;
+    border-radius: .4rem;
+    background: #c8d0dd;
+    transition: all 0.3s;
+}
+
+.sectionCategories a:hover{
+    background: #d7cce1;
 }
 
 .optionBtn{
@@ -62,12 +72,23 @@ a{
     cursor: pointer;
     margin-left: 1rem;
     white-space: nowrap;
-    background: #ccc;
+
+    color: #242424;
+    font-weight: 600;
+    border-radius: .4rem;
+    background: #bbcbe4;
+    transition: all 0.3s;
+}
+
+.optionBtn:hover{
+    background: #93b5ec;
 }
 
 /*section tasks*/
 .infoTask{
     margin-bottom: 1rem;
+    
+    color: #414141;
 }
 
 .sectionTasks{
@@ -82,6 +103,9 @@ a{
     position: relative;
     top: 50%;
     width: 30rem;
+
+    font-size: 1.2rem;
+    color: #414141;
 }
 
 .task{
@@ -92,10 +116,12 @@ a{
     margin-bottom: .8rem;
 }
 
+/*
 .taskInfo{
     padding: .7rem 1rem;
     width: 100%;
 }
+*/
 
 .taskTitle{
     margin-bottom: .2rem;
@@ -131,20 +157,29 @@ a{
     right: -1rem;
     bottom: -1rem;
 
-    border-radius: 100%;
     border: none;
     line-height: 1.8rem;
     padding: 1rem;
     font-size: 4rem;
     cursor: pointer;
-    background: #ccc;
+
+    color: white;
+    border-radius: 2.1rem;
+    background: #384a8d;
+    box-shadow: 0rem 0rem 1.5rem black;
+    transition: all 0.3s;
+}
+
+.newBtn:hover{
+    background: #1b3b6a;
+    transform: scale(1.1);
 }
 
 /*footer*/
 .copyright{
     position: absolute;
     bottom: .8rem;
-    font-size: .8rem;
+    font-size: .7rem;
 
     font-weight: 500;
     color: white;
