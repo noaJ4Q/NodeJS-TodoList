@@ -7,6 +7,7 @@ const port = 8080;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let categoriesSaved = [
     "Today",
     "Work"
@@ -14,6 +15,10 @@ let categoriesSaved = [
 
 let tasksSaved = [
 ];
+
+let data = {
+    categories: categoriesSaved
+}
 
 app.get("/", (req, res)=>{
     res.redirect("/tasks");
@@ -24,15 +29,22 @@ app.get("/tasks", (req, res)=>{
     let taskSended;
     if(categoryRequested){
         taskSended = tasksSaved.filter((t)=>t.category===categoryRequested);
+        if(categoryRequested === "Today"){
+            let currentDate = new Date();
+            data.day = days[currentDate.getDay()] + " " + currentDate.getDay() + "th";
+        }
+        else{
+            data.day = null;
+        }
     }
     else{
+        data.day = null;
         taskSended = [...tasksSaved];
     }
 
-    res.render("index.ejs", {
-        tasks: taskSended,
-        categories: categoriesSaved
-    });
+    data.tasks = taskSended;
+
+    res.render("index.ejs", data);
 })
 
 app.post("/newTask", (req, res)=>{
@@ -41,7 +53,6 @@ app.post("/newTask", (req, res)=>{
         tasksSaved.push({
             title: task,
             category: req.body.category,
-            completed: false
         })
     }
     res.redirect("/");

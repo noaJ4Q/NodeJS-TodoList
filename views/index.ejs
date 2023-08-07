@@ -13,7 +13,7 @@
                 <ul>
                     <li><a class="option" href="/tasks">All</a></li>
                     <% for (let i = 0; i < categories.length; i++){ %>
-                        <li><a class="option" href="/tasks?c=<%=categories[i]%>"><%=categories[i]%></a></li>
+                        <li><a href="/tasks?c=<%=categories[i]%>"><%=categories[i]%></a></li>
                     <% } %>
                 </ul>
                 <div id="newCategoryBtn" class="optionBtn">New category</div>
@@ -30,6 +30,9 @@
                     </div>
                 </div>
                 -->
+                <% if(locals.day){ %>
+                    <div class="infoTask"> <%= day %> left tasks</div>
+                <% } %>
                 <% if(tasks.length > 0){ for(let i = 0; i < tasks.length; i++){
                 %>
                 <div class="task<%= tasks.completed?' completedTask':null%>">
