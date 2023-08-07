@@ -20,7 +20,6 @@ let tasksSaved = [
     }
 ];
 
-
 app.get("/", (req, res)=>{
     res.redirect("/tasks");
 })
@@ -42,11 +41,25 @@ app.get("/tasks", (req, res)=>{
 })
 
 app.post("/newTask", (req, res)=>{
-    tasksSaved.push({
-        title: req.body.task,
-        category: req.body.category,
-        completed: false
+    let task = req.body.task;
+    if(task){
+        tasksSaved.push({
+            title: task,
+            category: req.body.category,
+            completed: false
+        })
+    }
+    res.redirect("/");
+})
+
+app.post("/newCategory", (req, res)=>{
+    let newCategory = req.body.category;
+    let lowerArray = categoriesSaved.map(element=>{
+        return element.toLowerCase();
     })
+    if(!(categoriesSaved.includes(newCategory) | lowerArray.includes(newCategory))){
+        categoriesSaved.push(newCategory);
+    }
     res.redirect("/");
 })
 

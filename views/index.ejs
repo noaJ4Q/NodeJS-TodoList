@@ -11,7 +11,7 @@
             <h1 class="title">TO-DO</h1>
             <nav class="sectionCategories">
                 <ul>
-                    <div>
+                    <div class="categoriesList">
                         <a href="/tasks"><li class="option">All</li></a>
                         <% for (let i = 0; i < categories.length; i++){ %>
                         <a href="/tasks?c=<%=categories[i]%>"
@@ -108,21 +108,23 @@
                 </button>
             </div>
             <div class="modalBody">
-                <div class="modalInput">
-                    <input
-                        type="text"
-                        placeholder="Enter new category"
-                        name="category"
-                    />
-                    <button
-                        id="addCategoryBtn"
-                        type="submit"
-                        class="addBtn"
-                        disabled
-                    >
-                        Add
-                    </button>
-                </div>
+                <form action="/newCategory" method="post">
+                    <div class="modalInput">
+                        <input
+                            type="text"
+                            placeholder="Enter new category"
+                            name="category"
+                        />
+                        <button
+                            id="addCategoryBtn"
+                            type="submit"
+                            class="addBtn"
+                            disabled
+                        >
+                            Add
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
         <%- include("partials/scripts.ejs") %>

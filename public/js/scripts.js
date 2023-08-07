@@ -8,6 +8,7 @@ const newTaskBtn = document.querySelector("#newTaskBtn");
 const newCategoryBtn = document.querySelector("#newCategoryBtn");
 
 const taskInput = document.querySelector("input[name='task']");
+const categoryInput = document.querySelector("input[name='category']")
 const completedBtns = document.querySelectorAll(".completedBtn");
 
 //open and close modal functions
@@ -48,7 +49,7 @@ closeModalCategoryBtn.addEventListener("click", ()=>{
     closeModal(modalCategory);
 });
 
-//validate form
+//validate form task
 taskInput.addEventListener("keyup", (e)=>{
     const addTaskBtn = document.querySelector("#addTaskBtn");
     if(e.target.value===""){
@@ -56,6 +57,17 @@ taskInput.addEventListener("keyup", (e)=>{
     }
     else{
         addTaskBtn.disabled = false;
+    }
+})
+
+//validate form category
+categoryInput.addEventListener("keyup", e=>{
+    const addCategoryBtn = document.querySelector("#addCategoryBtn");
+    if(e.target.value===""){
+        addCategoryBtn.disabled = true;
+    }
+    else{
+        addCategoryBtn.disabled = false;
     }
 })
 

@@ -47,15 +47,20 @@ a{
     display: inline-block;
 }
 
+.categoriesList{
+    overflow-x: auto;
+}
+
 .option{
     background: #ccc;
     padding: .4rem 1rem;
 }
 
 .optionBtn{
-    background: #ccc;
     padding: .4rem 1rem;
     cursor: pointer;
+    margin-left: 1rem;
+    background: #ccc;
 }
 
 /*section tasks*/
