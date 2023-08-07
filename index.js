@@ -13,11 +13,6 @@ let categoriesSaved = [
 ]
 
 let tasksSaved = [
-    {
-        title: "Task title",
-        category: "Today",
-        completed: false
-    }
 ];
 
 app.get("/", (req, res)=>{
@@ -54,10 +49,7 @@ app.post("/newTask", (req, res)=>{
 
 app.post("/newCategory", (req, res)=>{
     let newCategory = req.body.category;
-    let lowerArray = categoriesSaved.map(element=>{
-        return element.toLowerCase();
-    })
-    if(!(categoriesSaved.includes(newCategory) | lowerArray.includes(newCategory))){
+    if(!(categoriesSaved.includes(newCategory))){
         categoriesSaved.push(newCategory);
     }
     res.redirect("/");

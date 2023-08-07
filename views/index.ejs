@@ -11,16 +11,12 @@
             <h1 class="title">TO-DO</h1>
             <nav class="sectionCategories">
                 <ul>
-                    <div class="categoriesList">
-                        <a href="/tasks"><li class="option">All</li></a>
-                        <% for (let i = 0; i < categories.length; i++){ %>
-                        <a href="/tasks?c=<%=categories[i]%>"
-                            ><li class="option"><%=categories[i]%></li></a
-                        >
-                        <% } %>
-                    </div>
-                    <div id="newCategoryBtn" class="optionBtn">New category</div>
+                    <li><a class="option" href="/tasks">All</a></li>
+                    <% for (let i = 0; i < categories.length; i++){ %>
+                        <li><a class="option" href="/tasks?c=<%=categories[i]%>"><%=categories[i]%></a></li>
+                    <% } %>
                 </ul>
+                <div id="newCategoryBtn" class="optionBtn">New category</div>
             </nav>
             <div class="sectionTasks">
                 <!--
