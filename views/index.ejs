@@ -11,7 +11,7 @@
             <h1 class="title">TO-DO</h1>
             <nav class="sectionCategories">
                 <ul>
-                    <%- include("partials/categoriesList.ejs") %>
+                    <%- include("partials/categoriesList.ejs", {req: req}) %>
                 </ul>
                 <div id="newCategoryBtn" class="optionBtn">New category</div>
             </nav>

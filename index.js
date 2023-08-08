@@ -28,6 +28,7 @@ app.get("/tasks", (req, res)=>{
     let categoryRequested = req.query.c;
     let taskSended;
     if(categoryRequested){
+        data.req = categoryRequested;
         taskSended = tasksSaved.filter((t)=>t.category===categoryRequested);
         if(categoryRequested === "Today"){
             let currentDate = new Date();
@@ -39,6 +40,7 @@ app.get("/tasks", (req, res)=>{
     }
     else{
         data.day = null;
+        data.req = "All";
         taskSended = [...tasksSaved];
     }
 

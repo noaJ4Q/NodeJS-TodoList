@@ -55,7 +55,7 @@ a{
     border-right: .2rem solid #bbb;
 }
 
-.sectionCategories a{
+.option{
     display: inline-block;
     padding: .4rem 1rem;
 
@@ -67,6 +67,10 @@ a{
 }
 
 .sectionCategories a:hover{
+    background: #d7cce1;
+}
+
+.activeCategory{
     background: #d7cce1;
 }
 
@@ -84,10 +88,6 @@ a{
 }
 
 .optionBtn:hover{
-    background: #93b5ec;
-}
-
-.optionBtnActive{
     background: #93b5ec;
 }
 
