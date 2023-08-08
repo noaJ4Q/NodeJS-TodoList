@@ -32,11 +32,12 @@ a{
 
 .title{
     text-align: center;
+    color: #414141;
 }
 
 /*section categories*/
 .sectionCategories{
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,6 +51,8 @@ a{
     justify-content: start;
     gap: .3rem;
     width: 100%;
+
+    border-right: .2rem solid #bbb;
 }
 
 .sectionCategories a{
@@ -73,7 +76,7 @@ a{
     margin-left: 1rem;
     white-space: nowrap;
 
-    color: #242424;
+    color: #414141;
     font-weight: 600;
     border-radius: .4rem;
     background: #bbcbe4;
@@ -87,8 +90,11 @@ a{
 /*section tasks*/
 .infoTask{
     margin-bottom: 1rem;
-    
+    padding: .7rem 1rem;
+
+    border-radius: .4rem;
     color: #414141;
+    background: #ddd;
 }
 
 .sectionTasks{
@@ -101,9 +107,10 @@ a{
 .noTasks{
     text-align: center;
     position: relative;
-    top: 50%;
+    top: 40%;
     width: 30rem;
 
+    padding: .7rem 1rem;
     font-size: 1.2rem;
     color: #414141;
 }
@@ -114,6 +121,16 @@ a{
     background: #ccc;
     width: 30rem;
     margin-bottom: .8rem;
+
+    padding: .7rem 1rem;
+    border-radius: .4rem;
+    background: #384a8d;
+    color: rgb(228, 228, 228);
+    transition: all 0.3s;
+}
+
+.taskTitle{
+    font-weight: 500;
 }
 
 /*
@@ -145,6 +162,21 @@ a{
     background: #fff;
 }
 
+.completedBtn i{
+    opacity: 0;
+    font-size: 2rem;
+    position: relative;
+    top: -6%;
+    right: 2%;
+    
+    color: black;
+    transition: all 0.3s;
+}
+
+.completedBtn i:hover{
+    opacity: 1;
+}
+
 /*section extra*/
 .extraInfo{
     display: inline-block;
@@ -172,6 +204,7 @@ a{
 
 .newBtn:hover{
     background: #1b3b6a;
+    box-shadow: 0rem 0rem .8rem black;
     transform: scale(1.1);
 }
 
@@ -195,17 +228,19 @@ a{
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(0.5rem);
     z-index: 1;
+
 }
 
 .modal{
     min-width: 25vw;
     position: fixed;
     z-index: 2;
-
     padding: 1.8rem;
-    background: #eee;
+
+    border-radius: 1rem;
+    background: #fff;
 }
 
 .modalHeader{
@@ -213,6 +248,21 @@ a{
     justify-content: space-between;
     margin-bottom: 1rem;
     font-size: 1.5rem;
+
+    font-weight: 600;
+    color: #414141;
+}
+
+.modalClose{
+    border-radius: 5rem;
+    cursor: pointer;
+    border: none;
+    padding: .6rem;
+    transition: all 0.3s;
+}
+
+.modalClose:hover{
+    background: #ccc;
 }
 
 .modalInput{
@@ -226,26 +276,53 @@ a{
     font-size: 1.1rem;
     width: 100%;
     margin-right: .8rem;
+
+    border-radius: .4rem;
+    border: .01rem solid #a5a5a5;
+    transition: all 0.3s;
 }
 
 .modalOptions{
     display: flex;
+    align-items: center;
     padding: .5rem 1rem;
     font-size: 1.1rem;
-    background: #ccc;
+
+    border-radius: .4rem;
+    background: #ddd;
 }
 
 .modalOptions label{
     margin-right: 1rem;
+
+    font-weight: 500;
+    color: #414141;
 }
 
 .modalOptions select{
     width: 100%;
+    padding: .1rem 0;
+
+    font-size: 1rem;
+    border-radius: .4rem;
 }
 
 .addBtn{
     font-size: 1rem;
     padding: 0 .8rem;
+
+    font-weight: 500;
+    border: none;
+    border-radius: .4rem;
+    color: white;
+    background: #1b3b6a;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.addBtn:disabled{
+    background: #8d95af;
+    cursor: context-menu;
 }
 
 /*functions*/

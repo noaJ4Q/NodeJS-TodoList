@@ -19,17 +19,6 @@
                 <div id="newCategoryBtn" class="optionBtn">New category</div>
             </nav>
             <div class="sectionTasks">
-                <!--
-                <div class="task">
-                    <div class="taskInfo">
-                        <div class="taskTitle">Assignment</div>
-                        <div class="taskCategory">Category</div>
-                    </div>
-                    <div class="taskBtn">
-                        <div class="completedBtn"></div>
-                    </div>
-                </div>
-                -->
                 <% if(locals.day){ %>
                     <div class="infoTask"> <%= day %> left tasks</div>
                 <% } %>
@@ -41,12 +30,23 @@
                         <div class="taskCategory"><%=tasks[i].category%></div>
                     </div>
                     <div class="taskBtn">
-                        <div class="completedBtn"></div>
+                        <div class="completedBtn"><i class="bi bi-check"></i></div>
                     </div>
                 </div>
                 <% } } else {%>
                 <div class="noTasks">No tasks left</div>
                 <% } %>
+                <!--
+                <div class="task">
+                    <div class="taskInfo">
+                        <div class="taskTitle">Assignment</div>
+                        <div class="taskCategory">Category</div>
+                    </div>
+                    <div class="taskBtn">
+                        <div class="completedBtn"><i class="bi bi-check"></i></div>
+                    </div>
+                </div>
+            -->
             </div>
             <div class="SectionExtra">
                 <!--

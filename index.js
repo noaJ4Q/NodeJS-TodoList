@@ -7,7 +7,7 @@ const port = 8080;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const days = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'October', 'November', 'December'];
 let categoriesSaved = [
     "Today",
     "Work"
@@ -31,7 +31,7 @@ app.get("/tasks", (req, res)=>{
         taskSended = tasksSaved.filter((t)=>t.category===categoryRequested);
         if(categoryRequested === "Today"){
             let currentDate = new Date();
-            data.day = days[currentDate.getDay()] + " " + currentDate.getDay() + "th";
+            data.day = days[currentDate.getMonth()] + " " + currentDate.getDate() + "th";
         }
         else{
             data.day = null;

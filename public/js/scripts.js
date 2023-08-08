@@ -11,11 +11,15 @@ const taskInput = document.querySelector("input[name='task']");
 const categoryInput = document.querySelector("input[name='category']")
 const completedBtns = document.querySelectorAll(".completedBtn");
 
+const addTaskBtn = document.querySelector("#addTaskBtn");
+const addCategoryBtn = document.querySelector("#addCategoryBtn");
+
 //open and close modal functions
-const closeModal = function(m){
-    m.classList.add("hidden");
+const closeModal = function(modal,input,button){
+    modal.classList.add("hidden");
     overlay.classList.add("hidden");
-    taskInput.value = "";
+    input.value = "";
+    button.disabled = true;
 }
 
 const openModal = function(m){
@@ -28,16 +32,16 @@ newTaskBtn.addEventListener("click", ()=>{
     openModal(modalTask);
 });
 closeModalTaskBtn.addEventListener("click", ()=>{
-    closeModal(modalTask);
+    closeModal(modalTask, taskInput, addTaskBtn);
 });
 overlay.addEventListener("click", ()=>{
-    closeModal(modalTask);
-    closeModal(modalCategory);
+    closeModal(modalTask, taskInput, addTaskBtn);
+    closeModal(modalCategory, categoryInput, addCategoryBtn);
 });
 document.addEventListener("keydown", (e)=>{
     if(e.key === "Escape" && (!modalTask.classList.contains("hidden")||!modalCategory.classList.contains("hidden"))){
-        closeModal(modalTask);
-        closeModal(modalCategory);
+        closeModal(modalTask, taskInput, addTaskBtn);
+        closeModal(modalCategory, categoryInput, addCategoryBtn);
     }
 })
 
@@ -46,12 +50,11 @@ newCategoryBtn.addEventListener("click", ()=>{
     openModal(modalCategory);
 })
 closeModalCategoryBtn.addEventListener("click", ()=>{
-    closeModal(modalCategory);
+    closeModal(modalCategory, categoryInput, addCategoryBtn);
 });
 
 //validate form task
 taskInput.addEventListener("keyup", (e)=>{
-    const addTaskBtn = document.querySelector("#addTaskBtn");
     if(e.target.value===""){
         addTaskBtn.disabled = true;
     }
@@ -74,9 +77,10 @@ categoryInput.addEventListener("keyup", e=>{
 //complete task
 for(let i = 0; i < completedBtns.length; i++){
     completedBtns[i].addEventListener("click", (e)=>{
-        let parent = e.target.parentElement.parentElement;
+        let parent = e.target.closest(".task");
         if(!parent.classList.contains("completedTask")){
-            e.target.parentElement.parentElement.classList.add("completedTask");
+            e.target.style.opacity = "1";
+            parent.classList.add("completedTask");
         }
     })
 }
