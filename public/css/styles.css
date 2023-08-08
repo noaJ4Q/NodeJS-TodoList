@@ -9,7 +9,7 @@ body{
     align-items: center;
     min-height: 100vh;
 
-    background-image: linear-gradient(to bottom, #1b3b6a, #3b4c8b, #615cab, #8c6ac8, #bc76e2);
+    background-image: linear-gradient(to bottom, #1b3b6a, #3b4c8b, #615cab, #8c6ac8);
 }
 
 h1{
@@ -87,6 +87,10 @@ a{
     background: #93b5ec;
 }
 
+.optionBtnActive{
+    background: #93b5ec;
+}
+
 /*section tasks*/
 .infoTask{
     margin-bottom: 1rem;
@@ -108,7 +112,7 @@ a{
     text-align: center;
     position: relative;
     top: 40%;
-    width: 30rem;
+    width: 28rem;
 
     padding: .7rem 1rem;
     font-size: 1.2rem;
@@ -119,7 +123,7 @@ a{
     display: flex;
     justify-content: space-between;
     background: #ccc;
-    width: 30rem;
+    width: 28rem;
     margin-bottom: .8rem;
 
     padding: .7rem 1rem;

@@ -11,10 +11,7 @@
             <h1 class="title">TO-DO</h1>
             <nav class="sectionCategories">
                 <ul>
-                    <li><a class="option" href="/tasks">All</a></li>
-                    <% for (let i = 0; i < categories.length; i++){ %>
-                        <li><a href="/tasks?c=<%=categories[i]%>"><%=categories[i]%></a></li>
-                    <% } %>
+                    <%- include("partials/categoriesList.ejs") %>
                 </ul>
                 <div id="newCategoryBtn" class="optionBtn">New category</div>
             </nav>

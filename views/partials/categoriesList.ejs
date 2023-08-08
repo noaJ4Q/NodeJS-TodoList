@@ -1,0 +1,4 @@
+<li><a class="option" href="/tasks">All</a></li>
+<% for (let i = 0; i < categories.length; i++){ %>
+<li><a href="/tasks?c=<%=categories[i]%>"><%=categories[i]%></a></li>
+<% } %>
