@@ -14,6 +14,18 @@ const completedBtns = document.querySelectorAll(".completedBtn");
 const addTaskBtn = document.querySelector("#addTaskBtn");
 const addCategoryBtn = document.querySelector("#addCategoryBtn");
 
+const categoriesList = document.querySelector(".sectionCategories ul");
+
+//wheel scroll function
+categoriesList.addEventListener('wheel', (event) => {
+  event.preventDefault();
+
+  categoriesList.scrollBy({
+    left: event.deltaY < 0 ? -30 : 30,
+    
+  });
+});
+
 //open and close modal functions
 const closeModal = function(modal,input,button){
     modal.classList.add("hidden");

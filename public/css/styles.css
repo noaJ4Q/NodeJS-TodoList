@@ -9,7 +9,7 @@ body{
     align-items: center;
     min-height: 100vh;
 
-    background-image: linear-gradient(to bottom, #1b3b6a, #3b4c8b, #615cab, #8c6ac8);
+    background-image: linear-gradient(to bottom, #1b3b6a, #3b4c8b, #615cab);
 }
 
 h1{
@@ -20,19 +20,27 @@ h1{
 
 a{
     text-decoration: none;
+    color: #353535;
+}
+
+::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;
 }
 
 .container{
-    padding: 2.5rem;
+    padding: 2.3rem;
     background: #eee;
     position: relative;
+    height: 32rem;
+    width: 28rem;
 
     border-radius: 1.2rem;
 }
 
 .title{
     text-align: center;
-    color: #414141;
+    color: #353535;
 }
 
 /*section categories*/
@@ -47,12 +55,13 @@ a{
     list-style-type: none;
     margin: 0;
     padding: 0;
+    padding-right: .3rem;
     display: flex;
     justify-content: start;
     gap: .3rem;
     width: 100%;
 
-    border-right: .2rem solid #bbb;
+    overflow: auto;
 }
 
 .option{
@@ -77,10 +86,10 @@ a{
 .optionBtn{
     padding: .4rem 1rem;
     cursor: pointer;
-    margin-left: 1rem;
+    margin-left: .8rem;
     white-space: nowrap;
 
-    color: #414141;
+    color: #353535;
     font-weight: 600;
     border-radius: .4rem;
     background: #bbcbe4;
@@ -97,12 +106,13 @@ a{
     padding: .7rem 1rem;
 
     border-radius: .4rem;
-    color: #414141;
+    color: #353535;
     background: #ddd;
 }
 
 .sectionTasks{
     height: 20rem;
+    position: relative;
     margin-bottom: 1.5rem;
     overflow-y: auto;
     overflow-x: hidden;
@@ -110,20 +120,19 @@ a{
 
 .noTasks{
     text-align: center;
-    position: relative;
-    top: 40%;
-    width: 28rem;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
 
     padding: .7rem 1rem;
     font-size: 1.2rem;
-    color: #414141;
+    color: #353535;
 }
 
 .task{
     display: flex;
     justify-content: space-between;
-    background: #ccc;
-    width: 28rem;
     margin-bottom: .8rem;
 
     padding: .7rem 1rem;
@@ -190,8 +199,8 @@ a{
 
 .newBtn{
     position: absolute;
-    right: -1rem;
-    bottom: -1rem;
+    right: 1rem;
+    bottom: 1rem;
 
     border: none;
     line-height: 1.8rem;
@@ -202,13 +211,11 @@ a{
     color: white;
     border-radius: 2.1rem;
     background: #384a8d;
-    box-shadow: 0rem 0rem 1.5rem black;
     transition: all 0.3s;
 }
 
 .newBtn:hover{
     background: #1b3b6a;
-    box-shadow: 0rem 0rem .8rem black;
     transform: scale(1.1);
 }
 
@@ -218,7 +225,7 @@ a{
     bottom: .8rem;
     font-size: .7rem;
 
-    font-weight: 500;
+    font-weight: 400;
     color: white;
 }
 
@@ -254,7 +261,7 @@ a{
     font-size: 1.5rem;
 
     font-weight: 600;
-    color: #414141;
+    color: #353535;
 }
 
 .modalClose{
@@ -283,7 +290,7 @@ a{
 
     border-radius: .4rem;
     border: .01rem solid #a5a5a5;
-    transition: all 0.3s;
+    
 }
 
 .modalOptions{
@@ -300,7 +307,7 @@ a{
     margin-right: 1rem;
 
     font-weight: 500;
-    color: #414141;
+    color: #353535;
 }
 
 .modalOptions select{
@@ -336,8 +343,46 @@ a{
 
 .completedTask{
     opacity: 0.5;
+    background: #60698a;
 }
 
 .completedTask .completedBtn{
     cursor: context-menu;
+}
+
+@media(max-width:600px){
+    .container{
+        width: 80%;
+        padding: 1.8rem;
+    }
+
+    h1{
+        font-size: 3rem;
+    }
+
+    .option,.optionBtn{
+        font-size: .85rem;
+    }
+
+    .sectionTasks{
+        height: 17rem;
+    }
+
+    .noTasks{
+        font-size: 1rem;
+    }
+
+    .copyright{
+        display: none;
+    }
+
+    .newBtn{
+        border-radius: 1.5rem;
+        font-size: 3rem;
+        box-shadow: none;
+    }
+
+    .newBtn:hover{
+        box-shadow: none;
+    }
 }
